@@ -1,15 +1,15 @@
 {
-  "name": "wilson-ui",
+  "name": "zy-ui",
   "version": "1.2.7",
   "private": false,
-  "main": "dist/wilson-ui.umd.min.js",
+  "main": "dist/zy-ui.umd.min.js",
   "files": [
     "dist/*",
     "assets/*"
   ],
     "repository": { 
     "type": "git",
-    "url": "https://github.com/cywuxian/wilson-ui"
+    "url": "https://github.com/cywuxian/zy-ui"
   },
   "scripts": {
     "serve": "vue-cli-service serve",
