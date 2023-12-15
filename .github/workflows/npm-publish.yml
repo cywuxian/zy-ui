@@ -6,7 +6,7 @@ name: Node.js Package
 on:
   pull_request:
     branches:
-    - main
+      - main
 
 jobs:
   build:
@@ -18,16 +18,19 @@ jobs:
           node-version: 14.16.0
       - run: npm i
       - run: npm run lib
-
-  publish-npm:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: 14.16.0
-          registry-url: https://registry.npmjs.org/
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+
+  # publish-npm:
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - uses: actions/setup-node@v2
+  #       with:
+  #         node-version: 14.16.0
+  #         registry-url: https://registry.npmjs.org/
+  #     - run: npm publish
+  #       env:
+  #         NODE_AUTH_TOKEN: ${{secrets.npm_token}}
