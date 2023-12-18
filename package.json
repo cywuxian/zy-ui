@@ -5,7 +5,7 @@
   "main": "dist/wilson-ui.umd.min.js",
   "files": [
     "dist/*",
-    "assets/*"
+    "lib/*"
   ],
   "repository": {
     "type": "git",
