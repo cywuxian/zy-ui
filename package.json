@@ -7,7 +7,7 @@
     "dist/*",
     "assets/*"
   ],
-    "repository": { 
+  "repository": {
     "type": "git",
     "url": "https://github.com/cywuxian/wilson-ui"
   },
