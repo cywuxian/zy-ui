@@ -1,6 +1,6 @@
 {
   "name": "wilson-ui",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "private": false,
   "main": "dist/wilson-ui.umd.min.js",
   "files": [
