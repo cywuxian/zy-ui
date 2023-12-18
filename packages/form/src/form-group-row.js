@@ -16,15 +16,15 @@ export default {
   },
   /* eslint-disable */
   render(h, ctx) {
-    const model = this.model();
+    const model = this.model()
     // 获取内容所占的列宽
-    const spanWidth = this.colSpan > 0 ? this.colSpan : this._colSpan();
+    const spanWidth = this.colSpan > 0 ? this.colSpan : this._colSpan()
     const style = {
       class: "zy-form-group-row",
       attrs: {
         colspan: spanWidth, // 减去标题的3个占位空间
       },
-    };
+    }
     const title = h(
       "div",
       {
@@ -34,50 +34,50 @@ export default {
         },
       },
       [this.label]
-    );
+    )
     //如果没有做自定义，那么常规默认展示文本。
     if (!this.$scopedSlots.default) {
-      let prop = this.prop;
-      let value = model[prop];
+      let prop = this.prop
+      let value = model[prop]
       //内联数据处理,暂时不支持数组
       if (prop.indexOf(".") != -1) {
-        const keys = prop.split(".");
-        value = JSON.parse(JSON.stringify(model));
+        const keys = prop.split(".")
+        value = JSON.parse(JSON.stringify(model))
         keys.forEach((key) => {
-          value = value[key];
-        });
+          value = value[key]
+        })
       }
       const label = h(
         "div",
         {
-          class: "zy-form-gtoup-row-content",
+          class: "zy-form-group-row-content",
         },
         [value || "——"]
-      );
+      )
       const box = h(
         "div",
         {
           class: "zy-form-group-row-box",
         },
         [title, label]
-      );
-      return h("td", style, [box]);
+      )
+      return h("td", style, [box])
     }
     //渲染自定义样式
     const label = h(
       "span",
       {
-        class: "zy-form-gtoup-row-content",
+        class: "zy-form-group-row-content",
       },
       [this.$scopedSlots.default({ props: this.$props, model: model })]
-    );
+    )
     const box = h(
       "div",
       {
         class: "zy-form-group-row-box",
       },
       [title, label]
-    );
-    return h("td", style, [box]);
+    )
+    return h("td", style, [box])
   },
-};
+}
